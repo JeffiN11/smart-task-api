@@ -1,4 +1,4 @@
-import os
+﻿import os
 import json
 import logging
 import httpx
@@ -55,7 +55,7 @@ async def get_ai_priority(title: str, description: str | None) -> dict:
             return {"priority": priority, "reasoning": reasoning}
 
     except httpx.ConnectError:
-        logger.warning("Ollama not reachable � falling back to medium priority.")
+        logger.warning("Ollama not reachable — falling back to medium priority.")
         return {
             "priority": "medium",
             "reasoning": "AI service unavailable. Defaulted to medium priority.",
@@ -72,3 +72,4 @@ async def get_ai_priority(title: str, description: str | None) -> dict:
             "priority": "medium",
             "reasoning": "Unexpected error during AI prioritization.",
         }
+
